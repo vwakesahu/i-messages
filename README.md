@@ -4,7 +4,7 @@ A Node.js API for sending and retrieving messages via Apple's iMessage service (
 
 ## Introduction
 
-The iMessage API provides a simple interface to programmatically interact with Apple's iMessage system. It allows you to send messages and retrieve your message history through HTTP endpoints.
+The iMessage API provides a simple interface to interact programmatically with Apple's iMessage system. It allows you to send messages and retrieve your message history through HTTP endpoints. I created this for a hackathon, where I'm building an SMS-based AI agent that interacts with messages. I tried purchasing some messaging APIs from providers, but unfortunately, they all require verification, which takes about 20 hours. Since the hackathon ends in 6 hours, I ended up taking a more hands-on approach and built this myself.
 
 ## Prerequisites
 
