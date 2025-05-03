@@ -77,7 +77,44 @@ const sendMessage = async (req, res, next) => {
   }
 };
 
+const getAllMessages = async (req, res, next) => {
+  try {
+    // Get pagination parameters with defaults
+    const limit = parseInt(req.query.limit) || 100;
+    const page = parseInt(req.query.page) || 1;
+    const offset = (page - 1) * limit;
+
+    // Direction filter (optional)
+    const direction = req.query.direction;
+
+    if (!utils.checkDatabaseExists()) {
+      return res.status(500).json({
+        error: "iMessage database not found",
+      });
+    }
+
+    const rows = await db.getAllMessages(limit, offset);
+    let messages = utils.formatMessages(rows);
+
+    // Filter messages by direction if the parameter is specified
+    if (direction === "incoming" || direction === "outgoing") {
+      messages = messages.filter((message) => message.direction === direction);
+    }
+
+    res.json({
+      success: true,
+      count: messages.length,
+      page,
+      limit,
+      data: messages,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getMessagesByPhone,
   sendMessage,
+  getAllMessages,
 };

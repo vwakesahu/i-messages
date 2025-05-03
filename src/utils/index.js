@@ -99,6 +99,7 @@ const formatMessages = (rows) => {
     timestamp: row.timestamp,
     date: row.date_formatted,
     text: row.text || null,
+    phoneNumber: row.phone_number || null,
     direction: row.is_from_me ? "outgoing" : "incoming",
     contact: {
       name: row.display_name || null,
