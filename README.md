@@ -1,6 +1,6 @@
 # iMessage API
 
-A Node.js API for sending and retrieving messages via Apple's iMessage service works locally.
+A Node.js API for sending and retrieving messages via Apple's iMessage service (works locally).
 
 ## Introduction
 
