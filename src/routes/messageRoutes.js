@@ -3,5 +3,6 @@ const router = express.Router();
 const messageController = require('../controllers/messageController');
 
 router.get('/phone/:phoneNumber', messageController.getMessagesByPhone);
+router.post('/send', messageController.sendMessage);
 
 module.exports = router;
