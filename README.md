@@ -33,8 +33,8 @@ The iMessage API provides a simple interface to interact programmatically with A
 
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/imessage-api.git
-   cd imessage-api
+   git clone https://github.com/vwakesahu/i-messages.git
+   cd i-messages
    ```
 
 2. Install dependencies
